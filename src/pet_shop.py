@@ -17,10 +17,12 @@ def get_pets_sold(pets_sold):
 def increase_pets_sold(current_pets_sold, additional_pets_sold):
     current_pets_sold["admin"]["pets_sold"] += additional_pets_sold
 
-def get_stock_count(current_stock):
-    return len(["pets":x])
-    # stock_of_pets = 0
-    # for pet in ["pets"]:
-    #     stock_of_pets = stock_of_pets + 
-    # stock_of_pets = current_stock
-    # return current_stock
+def get_stock_count(pet_stock):
+    return len(pet_stock["pets"])
+
+def get_pets_by_breed(dict, breed):
+    animals = []
+    for pet in dict["pets"]:
+        if breed == ["breed"]:
+            animals.append(pet)
+    return animals
