@@ -20,9 +20,27 @@ def increase_pets_sold(current_pets_sold, additional_pets_sold):
 def get_stock_count(pet_stock):
     return len(pet_stock["pets"])
 
-def get_pets_by_breed(dict, breed):
+def get_pets_by_breed(pet_shop, breed):
     animals = []
-    for pet in dict["pets"]:
-        if breed == ["breed"]:
+    for pet in pet_shop["pets"]:
+        if breed == pet["breed"]:
             animals.append(pet)
     return animals
+
+def find_pet_by_name(pet_shop, name):
+    found_pet = None
+    for pet in pet_shop["pets"]:
+        if name == pet["name"]:
+            found_pet = pet
+    return found_pet
+
+def remove_pet_by_name(pet_shop, name):
+    counter = 0
+    for pet in pet_shop["pets"]:
+        if name == pet["name"]:
+            del(pet_shop["pets"][counter])
+        else: counter += 1
+
+def add_pet_to_stock(pet_shop, new_pet):
+    pet_shop["pets"].append(new_pet)
+
