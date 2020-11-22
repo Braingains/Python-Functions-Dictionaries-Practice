@@ -67,12 +67,12 @@ def sell_pet_to_customer(pet_shop, pet, customer):
     #check if pet is found
     for pet in pet_shop["pets"]:
         if pet_name == pet["name"]:
-
+            #check if customer can afford pet. Need to refactor function above to use it here.
             if customer["cash"] >= pet_price:
                 #have customer pay price of pet
                 remove_customer_cash(customer, pet_price)
 
-                #move price of pet to total_cash
+                #move customer cash to pet shop total_cash
                 add_or_remove_cash(pet_shop, pet_price)
 
                 #increase pets sold
@@ -82,17 +82,7 @@ def sell_pet_to_customer(pet_shop, pet, customer):
                 remove_pet_by_name(pet_shop, pet_name)
                 
                 #adds pet to customer
-                add_pet_to_customer(customer, pet)
-
-        
-
-    #check if pet is found
-    #if find_pet_by_name(pet_shop, pet):
-
-        #check if customer can afford pet
-        #if customer_can_afford_pet(customer, pet):
-
-            
+                add_pet_to_customer(customer, pet)   
             
 
             
